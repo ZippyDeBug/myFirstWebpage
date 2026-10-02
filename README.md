@@ -1,0 +1,1 @@
+Initial base for my own personal projects web page.
