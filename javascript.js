@@ -102,30 +102,30 @@ herobutton.addEventListener("click",greet);
 const tmntselector = document.querySelector("#tmntSelector");
 const blurb = document.querySelector("#tmntBlurb");
 
+
 tmntselector.addEventListener(`change`, pickFave);
 
 function pickFave() {
     const choice = tmntselector.value;
 
     if (choice === "Leo") {
-        blurb.textContent = `Leo? 
-        The leader, splinters best boy?
+        blurb.textContent = `The leader, splinters best boy?
         The dude should have been a 
         Teenage Mutant ninja Puppy.`;
         
     }
     else if (choice === "Donny") {
-        blurb.textContent = `Donny! The brains, the techie?
+        blurb.textContent = `The brains, the techie?
         You big ol' nerd.`;
     }
 
     else if (choice === "Raph") {
-        blurb.textContent = `Raph, the bad guy, the rough-houser?
+        blurb.textContent = `The bad guy, the rough-houser?
         You are such an edgelord try hard.`;
     }
 
     else if (choice ===`Mikey`) {
-        blurb.textContent = `Mikey, He's the party dude, the clown?
+        blurb.textContent = `He's the party dude, the clown?
         Frankly he's the only right answer to this,
         Everyone else need to loosen up!`;
     }
@@ -136,6 +136,36 @@ function pickFave() {
 
 }
 
+//changing colors for turtles! using SWITCH method!
+
+    const info = document.querySelector(`.info`);
+
+    tmntselector.addEventListener(`change`, () => {
+    const choice = tmntselector.value;
+
+switch (choice) {
+    case `Leo`:
+        update("blue", "white");
+    break;
+    case `Donny` :
+        update(`purple`, `white`);
+        break;
+    case `Raph` :
+        update(`red`, `black`);
+        break;
+    case `Mikey`:
+        update(`orange`,`black`);
+        break;   
+
+    default :
+    update("white", "black")
+}
+});
+
+function update(bgColor, textColor) {
+    info.style.backgroundColor = bgColor;
+    info.style.color = textColor;
+}
 
 
 
