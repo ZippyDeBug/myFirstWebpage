@@ -224,6 +224,11 @@ ul {
     white-space: pre-line;
 }
 
+#tmntSelector,
+#tmntBlurb {
+    text-align: center;
+}
+
 
 /*mobile overrides section */
 

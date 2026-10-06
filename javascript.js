@@ -76,7 +76,7 @@ function greet() {
     greeting.textContent = `Awww Hammy, I knew you cared!`;
     }
     
-    else if (name.toLowerCase() === "John") {
+    else if (name.toLowerCase() === "john") {
     const greeting = document.querySelector("#greeting");
     greeting.textContent = `Sup' John, cheers for popping by mate.`;
     }
@@ -95,4 +95,49 @@ Gracias por venir!`;
 }
 
 herobutton.addEventListener("click",greet);
+
+
+//Favourite turtle choices
+
+const tmntselector = document.querySelector("#tmntSelector");
+const blurb = document.querySelector("#tmntBlurb");
+
+tmntselector.addEventListener(`change`, pickFave);
+
+function pickFave() {
+    const choice = tmntselector.value;
+
+    if (choice === "Leo") {
+        blurb.textContent = `Leo? 
+        The leader, splinters best boy?
+        The dude should have been a 
+        Teenage Mutant ninja Puppy.`;
+        
+    }
+    else if (choice === "Donny") {
+        blurb.textContent = `Donny! The brains, the techie?
+        You big ol' nerd.`;
+    }
+
+    else if (choice === "Raph") {
+        blurb.textContent = `Raph, the bad guy, the rough-houser?
+        You are such an edgelord try hard.`;
+    }
+
+    else if (choice ===`Mikey`) {
+        blurb.textContent = `Mikey, He's the party dude, the clown?
+        Frankly he's the only right answer to this,
+        Everyone else need to loosen up!`;
+    }
+
+    else {
+        blurb.textContent = ``;
+    }
+
+}
+
+
+
+
+
 
