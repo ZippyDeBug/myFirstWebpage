@@ -216,11 +216,14 @@ border: 2px solid  #E5E7EB;
 
 /*Styling removal*/
 p,
-ul {
+ul,
+a {
     list-style: none;
     padding-inline-start: 0;
     padding: 0;
     margin: 0;
+    text-decoration: none;
+    color: inherit;
 }
 
 .multiline { 

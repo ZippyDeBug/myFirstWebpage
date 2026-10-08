@@ -2,7 +2,7 @@
 //Hero button to greet the visitor!
 const herobutton = document.querySelector("#herobutton");
 
-
+herobutton.addEventListener("click",greet);
 
 function greet() {
     let name = prompt(`What is your name?`);
@@ -90,11 +90,10 @@ Gracias por venir!`;
         
     else {
     const greeting = document.querySelector("#greeting");
-    greeting.textContent = `Hello ${name},Welcome to my page!`;}
+    greeting.textContent = `Hello ${name},`;}
 
 }
 
-herobutton.addEventListener("click",greet);
 
 
 //Favourite turtle choices
@@ -168,6 +167,44 @@ function update(bgColor, textColor) {
 }
 
 
+
+//Login alert  functionality take 2 
+//THIS IS NOT HOW PASSWORDS SHOULD BE STORED!
+//PRACTICE FOR if AND else ONLY!
+
+const loginButton = document.querySelector (`#login`);
+
+loginButton.addEventListener(`click`, credentials );
+
+function credentials () {
+let userName = prompt("What is your username?");
+
+if (userName === 'Bossman') {
+    let pass = prompt('what is your password?');
+
+    if (pass === 'THEbossman!') {
+        alert ('Welcome!')
+    }
+
+    else if (pass === '' || pass === null) {
+        alert ('cancelled')
+    }
+
+     else  {
+        alert ('Wrong Password')
+    }
+}
+
+ else if (userName === '' || userName === null) {
+    alert ('cancelled')
+ }
+  
+ else {
+    alert ("I don't know you")
+}
+
+ 
+ }
 
 
 
