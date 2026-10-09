@@ -92,17 +92,17 @@ body {
 
 
 .info { 
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-between;
+    display: grid;
+    justify-content: center;
     align-items: center;
+    text-align: center;
 
 }
 
 .info .title {
     font-size: 36px;
     font-weight: 900;
+    justify-self: center;
 }
 
 .info ul {
@@ -233,6 +233,9 @@ a {
 #tmntSelector,
 #tmntBlurb {
     text-align: center;
+    min-width: 300px;
+    max-width: 500px;
+    justify-self: center;
 }
 
 
