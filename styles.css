@@ -146,6 +146,7 @@ body {
 .quote .body {
     display: flex;
     flex-direction: column;
+    align-items: center;
     max-width: 800px;
     margin: 50px;
 }
@@ -235,6 +236,14 @@ a {
     min-width: 300px;
     max-width: 500px;
     justify-self: center;
+}
+
+#fizzNumber,
+#fizzSubmitButton {
+    width: 150px;
+    justify-self: center;
+    text-align: center;
+
 }
 
 
