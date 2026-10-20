@@ -94,6 +94,27 @@ Gracias por venir!`;
 
 }
 
+//fizzbuzz game
+
+const fizzNumber = document.getElementById('fizzNumber')
+
+const fizzSubmit = document.querySelector("#fizzSubmitButton")
+fizzSubmit.addEventListener('click', checkNumber)
+
+function checkNumber() { 
+    let userFizzInput = fizzNumber.value
+
+    console.log(userFizzInput, typeof userFizzInput)
+
+}
+
+//function fizzBuzzAnswer() {
+
+//}
+
+
+
+
 
 
 //Favourite turtle choices
