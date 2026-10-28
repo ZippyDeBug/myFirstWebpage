@@ -3,11 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../javaScripts/fizzBuzz.js" defer></script>
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="rpsGame.css">
-    <script src="rpsGame.js" defer></script>
 </head>
 <body>
+
+
+
+    <!-- Start of header section-->
+    <div class="header">
+        <!-- this is the Nav bar section-->
+            <div class="navbar">
+           <a href="../main.html">ZippyDebug</a>
+            <ul>
+                <li><a href="../main.html">Home</a></li>
+                <li>Header Link two</li>
+                <li id="login">Admin</li>
+            </ul>
+        </div>
+    
+
+        <!-- this is the Hero section-->
+        <div class="hero">
+            <div class="heroleft">
+                <div class="herotitle">
+                    <div id="greeting" class="multiline"></div> Wanna play a game?
+                </div>
+                 <p>  A game of Rock Paper Scissors!
+                    <br>A classic!</p>
+
+            </div>
+            <div class="heroright">
+                <img src="../images/RPS.png" alt="Image here">
+            </div>
+        </div>
+    </div>
+    <!-- End of Header section-->
+        <!-- this is the Info section section-->
+
+        <div class="info">
+            <div class="title">Choose your weapon!</div>
+           <label for="rpsChoice">Enter a your choice of Rock, Paper or Scissors!</label>
+            <br>          
+            <input
+            type="text"
+            id="rpsInput"
+            maxlength="8"
+            placeholder="choose">
+            <br>
+            <input type="submit" id="rpsInputButton">
+            <br>
+            <div id="rpsResult" class="title multiline">          
+            </div>
+
+        </div>
+
+
+        <!-- this is the Quote section-->
+         <div class="quote">
+            <div class="body multiline">
+                `I love Rock paper Scissors dude!                
+                I always win, never lost, rock always wins.
+                rock is hard... like my abs dude.`
+                <div class="author"> - Chad, random dude on the internet.</div>
+            </div>
+
+                 
+
+         </div>
+
+         
+         
+        <!-- this is the call to action section-->
+         <div class="cta">
+            <div class="module">
+            <div class="moduleleft">
+            <p class="title"> Rock Paper Scissors Newsletter!!</p>
+            <p class="body"> No not really, but I need something here for now.<br>(I'll do something interesting one day!)</p>
+            </div>
+            <button> Sign Up </button>
+            </div>
+         </div>
+
+        <!-- this is the footer section-->
+         <div class="footer">
+            <p> Copyright ... Me</p>
+         </div>
+
+
+
+
+
+
+    </div>
     
 </body>
 </html>
