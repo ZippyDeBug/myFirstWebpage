@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
-    <script src="../javaScripts/rpsGame.js" defer></script>
+    <script src="../javaScripts/" defer></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
@@ -45,12 +45,13 @@
         <div class="info">
             <div class="title">Choose your weapon!</div>
            <label for="rpsChoice">Enter a your choice of Rock, Paper or Scissors!</label>
-            <br>          
-            <input
-            type="text"
-            id="rpsInput"
-            maxlength="8"
-            placeholder="choose">
+            <br>  
+            <select id="rpsSelect">
+                <option value="">Choose your weapon</option>
+                <option value="Rock">Rock</option>
+                <option value="Paper">Paper</option>
+                <option value="Scissors">Scissors</option>
+            </select>
             <br>
             <input type="submit" id="rpsInputButton">
             <br>
