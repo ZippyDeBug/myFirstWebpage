@@ -93,6 +93,7 @@ function playAgain(i) {
     totalRounds = i;
     playerScore = i;
     cpuScore = i;
+    showScore("playerScore","cpuScore")
     console.log( "Game reset!")
     console.log ((playerScore), (cpuScore));
     console.log ("Total Rounds:", (totalRounds)) ;
