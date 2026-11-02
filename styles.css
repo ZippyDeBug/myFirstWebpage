@@ -272,6 +272,18 @@ a {
     background-repeat: no-repeat; 
 }
 
+#scores {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    
+}
+
+#playAgain {
+    width: 200px;
+    justify-self: center;
+}
+
 /* TMNT Specific */
 #tmntSelector,
 #tmntBlurb {
