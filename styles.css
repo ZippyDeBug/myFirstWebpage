@@ -3,7 +3,6 @@
 }
 
 
-
 body {
     font-family: roboto;
     display: flex;
@@ -230,6 +229,50 @@ a {
     white-space: pre-line;
 }
 
+.info .options {
+    display: flex;
+    margin: 10px;
+}
+
+/*Rock Paper scissors specific*/
+
+#rock,
+#paper,
+#scissors {
+    margin: 5px;
+    background-color: #df5429;
+    border: 2px solid #000000;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;    
+}
+
+
+#rock {
+    background-image: url(./images/rock.png);
+    height: 100px;
+    width: 150px;
+    background-size: 160px,150px;
+    background-repeat: no-repeat;
+    }
+
+#paper {
+    background-image: url(./images/paper.png);
+    height: 100px;
+    width: 150px;
+    background-size: 160px,150px;
+    background-repeat: no-repeat;
+}
+
+#scissors {
+   background-image: url(./images/scissors.png);
+    height: 100px;
+    width: 150px;
+    background-size: 160px,150px;
+    background-repeat: no-repeat; 
+}
+
+/* TMNT Specific */
 #tmntSelector,
 #tmntBlurb {
     text-align: center;
@@ -237,6 +280,8 @@ a {
     max-width: 500px;
     justify-self: center;
 }
+
+/*FizzBuzz Specific*/
 
 #fizzNumber,
 #fizzSubmitButton {
