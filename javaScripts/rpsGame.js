@@ -46,11 +46,33 @@ function getCpuDecision() {
 // create function playGame(playerChoice)
 function playGame(playerChoice) {
     totalRounds++;
-    const CpuDecision = getCpuDecision()
-    
-    if (playerChoice === CpuDecision) {
-        alert("A Draw!")
+    const cpuDecision = getCpuDecision();
+
+    if (playerChoice === cpuDecision) {
+    console.log (playerChoice)
+    console.log (cpuDecision);
+    console.log ("A Draw!");
+    console.log ((playerScore), (cpuScore))       
     }
+
+    else if ((playerChoice === "rock" && cpuDecision === "scissors") ||
+(playerChoice === "paper" && cpuDecision === "rock") || 
+(playerChoice === "scissors" && cpuDecision === "paper" )) {
+    playerScore++; 
+    console.log (playerChoice)
+    console.log (cpuDecision);
+    console.log ("You win!")
+    console.log ((playerScore), (cpuScore))
+    }
+
+    else {
+    cpuScore++; 
+    console.log (playerChoice)
+    console.log (cpuDecision);
+    console.log ("CPU wins!")
+    console.log ((playerScore), (cpuScore))
+    }
+
 }
 // set const for getCpuDecision = cpuDecision()
 // Increase totalRounds by 1
