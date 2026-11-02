@@ -116,7 +116,7 @@ const displayTotalRounds = document.querySelector("#totalRounds");
 function showScore(player,cpu) {
     displayCpuScore.textContent = `${cpuScore}`;
     displayPlayerScore.textContent = `${playerScore}`;
-  //  displayTotalRounds.textContent = `${totalRounds}`;
+    displayTotalRounds.textContent = `${totalRounds}`;
     
 }
 
