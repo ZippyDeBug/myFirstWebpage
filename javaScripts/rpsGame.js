@@ -52,7 +52,8 @@ function playGame(playerChoice) {
     console.log (playerChoice)
     console.log (cpuDecision);
     console.log ("A Draw!");
-    console.log ((playerScore), (cpuScore))       
+    console.log ((playerScore), (cpuScore))
+    console.log ("Total Rounds:",(totalRounds))       
     }
 
     else if ((playerChoice === "rock" && cpuDecision === "scissors") ||
@@ -62,15 +63,17 @@ function playGame(playerChoice) {
     console.log (playerChoice)
     console.log (cpuDecision);
     console.log ("You win!")
-    console.log ((playerScore), (cpuScore))
+    console.log ((playerScore), (cpuScore))    
+    console.log ("Total Rounds:", (totalRounds))
     }
 
     else {
     cpuScore++; 
     console.log (playerChoice)
     console.log (cpuDecision);
-    console.log ("CPU wins!")
-    console.log ((playerScore), (cpuScore))
+    console.log ("CPU wins!");
+    console.log ((playerScore), (cpuScore));
+    console.log ("Total Rounds:", (totalRounds)) ;
     }
 
 }
