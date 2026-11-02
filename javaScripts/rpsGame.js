@@ -1,41 +1,73 @@
+// set variables for totalRounds , playerScore & CPU Score
+let totalRounds = 0;
+let playerScore = 0;
+let cpuScore = 0; 
+
+// Create const for finding buttons rock paper & scissors
+const rockButton = document.querySelector("#rock")
+const paperButton = document.querySelector("#paper")
+const scissorsButton = document.querySelector("#scissors")
+
+// Create Const for finding play again button
+//const playAgainButton = document.getElementById("#playAgain")
+
+// add event listener for rock, when clicked playGame(rock)
+rockButton.addEventListener("click", function () {playGame("rock")} )
+// add event listener for paper, when clicked playGame(paper)
+paperButton.addEventListener("click", function () {playGame("paper")})
+// add event listener for scissors, when clicked playGame(scissors)
+scissorsButton.addEventListener("click", function () {playGame("scissors")})
+// Add event listener for playAgain, when clicked playAgain function
+//playAgainButton.addEventListener("click", playAgain())
 
 
-
-
-//this controls the number of round we want to play.
-const gameRounds = 5
-
-//Create a function to generate a random integer number between 0 and 2.
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max)
-}
-//Create a function to getComputerChoice select R P or S.
-//Call Random integer generate for a number between 0-2
-//if 0 then return rock
-//if 1 then return paper
-//if 2 then return scissors
-function getComputerChoice() {
-    const cpuChoice = getRandomInt(3); 
-    if (cpuChoice === 0) {
-        return "Rock";
+// create function for randomIntGen
+function getRandomIntGen(max) {
+    return Math.floor(Math.random()*max);
     }
-    
-    else if (cpuChoice === 1) {
-        return "Paper";
-    }
 
+// create function for cpuDecision
+// create const for result of randomIntGen maximum number 3.
+// if 0 then return rock, if 1 then return paper, Else then return scissors
+function getCpuDecision() {
+    const randomNumber = getRandomIntGen(3)
+    if (randomNumber === 0) { 
+        return "rock"
+    }
+    else if (randomNumber === 1) {
+        return "paper"
+    }
     else {
-        return "Scissors";
+        return "scissors"
     }
-        
 }
 
 
-//create constant to find text field for userInput
-const rpsChoice = document.getElementById("#rpsChoice");
-//create constant to look for clicks on Submit button and start humanChoice function.
-const inputSubmitted = document.querySelector("#rpsInputButton");
-/* inputSubmitted.addEventListener('click', testInput ) */
+// create function playGame(playerChoice)
+function playGame(playerChoice) {
+    totalRounds++;
+    const CpuDecision = getCpuDecision()
+    
+    if (playerChoice === CpuDecision) {
+        alert("A Draw!")
+    }
+}
+// set const for getCpuDecision = cpuDecision()
+// Increase totalRounds by 1
+// If values match 
+// fire Draw message
+// Else if cpu decision beats human 
+// Increase cpuScore by 1
+// fire loss message
+// Else if human decision beats cpu
+// Increase playerScore by 1
+// fire win message
+// Else return alert "error".
 
+
+// create playAgain function
+// Reset playerScore to 0
+// Reset cpuScore to 0
+// Reset totalRounds to 0
 
 
