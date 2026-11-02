@@ -9,7 +9,7 @@ const paperButton = document.querySelector("#paper")
 const scissorsButton = document.querySelector("#scissors")
 
 // Create Const for finding play again button
-//const playAgainButton = document.getElementById("#playAgain")
+const playAgainButton = document.querySelector("#playAgain")
 
 // add event listener for rock, when clicked playGame(rock)
 rockButton.addEventListener("click", function () {playGame("rock")} )
@@ -18,8 +18,7 @@ paperButton.addEventListener("click", function () {playGame("paper")})
 // add event listener for scissors, when clicked playGame(scissors)
 scissorsButton.addEventListener("click", function () {playGame("scissors")})
 // Add event listener for playAgain, when clicked playAgain function
-//playAgainButton.addEventListener("click", playAgain())
-
+playAgainButton.addEventListener("click", function () {playAgain(0)})
 
 // create function for randomIntGen
 function getRandomIntGen(max) {
@@ -45,9 +44,11 @@ function getCpuDecision() {
 
 // create function playGame(playerChoice)
 function playGame(playerChoice) {
+    // Increase number or total rounds by 1 iteration
     totalRounds++;
+    // set const for getCpuDecision = cpuDecision()
     const cpuDecision = getCpuDecision();
-
+    // If values match fire Draw message
     if (playerChoice === cpuDecision) {
     console.log (playerChoice)
     console.log (cpuDecision);
@@ -55,7 +56,7 @@ function playGame(playerChoice) {
     console.log ((playerScore), (cpuScore))
     console.log ("Total Rounds:",(totalRounds))       
     }
-
+// Else if cpu decision beats human, Increase cpuScore by 1, fire loss message
     else if ((playerChoice === "rock" && cpuDecision === "scissors") ||
 (playerChoice === "paper" && cpuDecision === "rock") || 
 (playerChoice === "scissors" && cpuDecision === "paper" )) {
@@ -66,8 +67,10 @@ function playGame(playerChoice) {
     console.log ((playerScore), (cpuScore))    
     console.log ("Total Rounds:", (totalRounds))
     }
-
-    else {
+// Else if human decision beats cpu increase playerScore by 1 fire win message
+    else if (((playerChoice === "paper" && cpuDecision === "scissors") ||
+(playerChoice === "scissors" && cpuDecision === "rock") || 
+(playerChoice === "rock" && cpuDecision === "paper" ))) {
     cpuScore++; 
     console.log (playerChoice)
     console.log (cpuDecision);
@@ -75,24 +78,23 @@ function playGame(playerChoice) {
     console.log ((playerScore), (cpuScore));
     console.log ("Total Rounds:", (totalRounds)) ;
     }
-
-}
-// set const for getCpuDecision = cpuDecision()
-// Increase totalRounds by 1
-// If values match 
-// fire Draw message
-// Else if cpu decision beats human 
-// Increase cpuScore by 1
-// fire loss message
-// Else if human decision beats cpu
-// Increase playerScore by 1
-// fire win message
 // Else return alert "error".
+    else {
+        Alert ("Error")
+    }
+}
 
 
 // create playAgain function
+// Reset totalRounds to 0
 // Reset playerScore to 0
 // Reset cpuScore to 0
-// Reset totalRounds to 0
-
-
+// console state game reset , player scores and round total.
+function playAgain(i) {
+    totalRounds = i;
+    playerScore = i;
+    cpuScore = i;
+    console.log( "Game reset!")
+    console.log ((playerScore), (cpuScore));
+    console.log ("Total Rounds:", (totalRounds)) ;
+}
