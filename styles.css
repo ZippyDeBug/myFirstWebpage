@@ -1,7 +1,3 @@
-.html {
-    
-}
-
 
 body {
     font-family: roboto;
@@ -302,6 +298,37 @@ a {
     text-align: center;
 
 }
+
+/* Calculator Specific section */
+
+.calc-buttons {
+    max-width: 450px;
+    block-size: 450px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #df5429;
+    align-content: center;
+    gap: 10px;
+}
+
+.calc-numbers {
+    background-color: #1F2937;
+    border: 3px solid white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+
+}
+
+.calc-symbols {
+    background-color: #090c11;
+    border: 3px solid blue;
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+
 
 
 /*mobile overrides section */
