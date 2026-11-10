@@ -301,21 +301,30 @@ a {
 
 /* Calculator Specific section */
 
-.calc-buttons {
+.calc-body {
     max-width: 450px;
-    block-size: 450px;
+    block-size: 250px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     background-color: #df5429;
     align-content: center;
     gap: 10px;
 }
+
+
+.calc-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-height: 150px;
+}
+
 
 .calc-numbers {
     background-color: #1F2937;
     border: 3px solid white;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 50px 50px;
+    align-items: center;
     
 
 }
@@ -325,8 +334,12 @@ a {
     border: 3px solid blue;
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px 50px 50px;
+    justify-items: center;
+    align-items: center;
 
 }
+
 
 
 
