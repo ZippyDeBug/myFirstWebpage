@@ -302,12 +302,13 @@ a {
 /* Calculator Specific section */
 
 .calc-body {
-    max-width: 450px;
-    block-size: 250px;
-    display: grid;
     background-color: #df5429;
     align-content: center;
     gap: 10px;
+    max-width: 450px;
+    display: grid;
+    grid-template-rows: 1fr 0fr 2fr;    
+
 }
 
 .calc-screen {
@@ -330,9 +331,8 @@ a {
     background-color: #1F2937;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50px 50px 50px 50px;
     align-items: center;
-    
+    column-gap: 5px;
 
 }
 
