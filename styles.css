@@ -310,6 +310,14 @@ a {
     gap: 10px;
 }
 
+.calc-screen {
+    background-color: lightgray;
+    margin: 20px;
+    height: 40px;
+    font-size: 30px;
+    text-align: right;
+    align-content: center;
+}
 
 .calc-buttons {
     display: grid;
@@ -320,7 +328,6 @@ a {
 
 .calc-numbers {
     background-color: #1F2937;
-    border: 3px solid white;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 50px 50px 50px 50px;
@@ -331,7 +338,6 @@ a {
 
 .calc-symbols {
     background-color: #090c11;
-    border: 3px solid blue;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px 50px 50px 50px;
