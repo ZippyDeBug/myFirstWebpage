@@ -118,10 +118,11 @@ function playGame(playerSelection) {
 
 
 // create playAgain function
+// unlocks button functions
 // Reset totalRounds to 0
 // Reset playerScore to 0
 // Reset cpuScore to 0
-// console state game reset , player scores and round total.
+// clears results message
 function playAgain(i) {
     rockButton.disabled = false;
     scissorsButton.disabled = false;
@@ -152,6 +153,7 @@ function resultMessage(result) {
     resultPlace.textContent = result
 }
 
+//create function to check rounds vs the Max round settings.
 function checkRounds() {
     if(totalRounds >= 5) {
         endGame(playerScore, cpuScore)
@@ -159,6 +161,8 @@ function checkRounds() {
     else {totalRounds++}
 }
 
+
+//create end game function to control the game end state
 function endGame(playerScore, cpuScore) {
     rockButton.disabled = true;
     scissorsButton.disabled = true;
