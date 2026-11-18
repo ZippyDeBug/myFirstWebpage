@@ -155,6 +155,9 @@ function checkRounds() {
 }
 
 function endGame(playerScore, cpuScore) {
+    rockButton.disabled = true;
+    scissorsButton.disabled = true;
+    paperButton.disabled = true;
     if (playerScore > cpuScore) {    
         result = ` You win! ${playerScore} to ${cpuScore}. Great job!` 
         resultMessage(result)
