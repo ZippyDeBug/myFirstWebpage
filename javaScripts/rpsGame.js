@@ -13,6 +13,12 @@ const playAgainButton = document.querySelector("#playAgain");
 const resultPlace = document.querySelector(".results")
 
 
+let playerChoice = ""
+let cpuChoice = ""
+let winner = ""
+let result = ""
+
+
 // add event listener for rock, when clicked playGame(rock)
 // add event listener for paper, when clicked playGame(paper)
 // add event listener for scissors, when clicked playGame(scissors)
@@ -23,59 +29,83 @@ scissorsButton.addEventListener("click", function () {playGame("scissors")})
 playAgainButton.addEventListener("click", function () {playAgain(0)})
 
 
-// create function for randomIntGen
-// create function for cpuDecision
-// create const for result of randomIntGen maximum number 3.
-// if 0 then return rock, if 1 then return paper, Else then return scissors
+// create general helper function for randomIntGen
+
 function getRandomIntGen(max) {
     return Math.floor(Math.random()*max);
     }
-function getCpuDecision() {
+
+// create function for cpuDecision
+// create const for result of randomIntGen maximum number 3.
+// if 0 then return rock, if 1 then return paper, Else then return scissors
+function getCpuChoice() {
     const randomNumber = getRandomIntGen(3)
     if (randomNumber === 0) { 
-        return "rock"
+        return "rock";
     }
     else if (randomNumber === 1) {
-        return "paper"
+        return "paper";
     }
     else {
-        return "scissors"
+        return "scissors";
     }
 }
 
 
-// create function playGame(playerChoice)
-// Increase number or total rounds by 1 iteration
-// set const for getCpuDecision = cpuDecision()
-// If values match fire Draw message
-// If cpu decision beats human, Increase cpuScore by 1, fire loss message
-// If human decision beats cpu increase playerScore by 1 fire win message
-// Else return alert "error".
-function playGame(playerChoice) {
-    totalRounds++;
-    const cpuDecision = getCpuDecision();
-    let result = ""
-    if (playerChoice === cpuDecision) {
-    result = `${playerChoice} matches ${cpuDecision}. 
-    A draw!`     
+//create function for checking winner based on player and CPU choices.
+// if matching , return draw
+// if player wins, return player
+// if cpu wins return cpu
+
+function checkWinner(playerChoice, cpuChoice) {
+    if (playerChoice === cpuChoice) {
+    return"draw"
     }
-    else if ((playerChoice === "rock" && cpuDecision === "scissors") ||
-(playerChoice === "paper" && cpuDecision === "rock") || 
-(playerChoice === "scissors" && cpuDecision === "paper" )) {
-    playerScore++; 
-    result = `${playerChoice} beats ${cpuDecision}.
-    You Win!`
+    else if ((playerChoice === "rock" && cpuChoice === "scissors") ||
+(playerChoice === "paper" && cpuChoice === "rock") || 
+(playerChoice === "scissors" && cpuChoice === "paper" )) {
+    return "player"
     }
-    else if (((playerChoice === "paper" && cpuDecision === "scissors") ||
-(playerChoice === "scissors" && cpuDecision === "rock") || 
-(playerChoice === "rock" && cpuDecision === "paper" ))) {
-    cpuScore++; 
-    result = `${playerChoice} is beaten by ${cpuDecision}. CPU Wins!`
+    else if (((playerChoice === "paper" && cpuChoice === "scissors") ||
+(playerChoice === "scissors" && cpuChoice === "rock") || 
+(playerChoice === "rock" && cpuChoice === "paper" ))) {
+    return "cpu"
     }
     else {
-        Alert ("Error")
+        alert ("Error2")
     }
-    showScore("playerScore","cpuScore");
+
+}
+
+// create function playGame taking the playerSelection from buttons.
+// Increase number or total rounds by 1 iteration
+// update playerChoice to match playerSelection
+// Call CPU Decision engine to set cpuChoice.
+// If result is draw, set result message to draw
+// If result is cpu, Increase cpuScore by 1, set result message to loss
+// If result is player increase playerScore by 1, set result message to win.
+// run show score function
+// rune results message function
+
+function playGame(playerSelection) {
+    totalRounds++;
+    playerChoice = playerSelection;
+    cpuChoice = getCpuChoice();
+    winner = checkWinner(playerChoice, cpuChoice);
+    if (winner === "draw") {
+    result = `${playerChoice} matches ${cpuChoice}. 
+    A draw!`     
+    }
+    else if (winner === "player") {
+    playerScore++; 
+    result = `${playerChoice} beats ${cpuChoice}.
+    You Win!`
+    }
+    else if (winner === "cpu") {
+    cpuScore++; 
+    result = `${playerChoice} is beaten by ${cpuChoice}. CPU Wins!`
+    }
+    showScore(playerScore,cpuScore);
     resultMessage(result)
 }
 
@@ -109,7 +139,7 @@ const displayTotalRounds = document.querySelector("#totalRounds");
 //text content for cpuScore score points span to be "cpuScore"
 //text content for playerScore score points span to be "playerScore"
 //text content for total rounds to be "totalRounds"
-function showScore(player,cpu) {
+function showScore() {
     displayCpuScore.textContent = `${cpuScore}`;
     displayPlayerScore.textContent = `${playerScore}`;
     displayTotalRounds.textContent = `${totalRounds}`;
