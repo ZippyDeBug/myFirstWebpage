@@ -31,9 +31,9 @@ let result = ""
 // add event listener for paper, when clicked playGame(paper)
 // add event listener for scissors, when clicked playGame(scissors)
 // Add event listener for playAgain, when clicked playAgain function
-rockButton.addEventListener("click", function () {playGame("rock")} )
-paperButton.addEventListener("click", function () {playGame("paper")})
-scissorsButton.addEventListener("click", function () {playGame("scissors")})
+rockButton.addEventListener("click", function () {playGame("Rock")} )
+paperButton.addEventListener("click", function () {playGame("Paper")})
+scissorsButton.addEventListener("click", function () {playGame("Scissors")})
 playAgainButton.addEventListener("click", function () {playAgain(0)})
 
 
@@ -48,13 +48,13 @@ function getRandomIntGen(max) {
 function getCpuChoice() {
     const randomNumber = getRandomIntGen(3)
     if (randomNumber === 0) { 
-        return "rock";
+        return "Rock";
     }
     else if (randomNumber === 1) {
-        return "paper";
+        return "Paper";
     }
     else {
-        return "scissors";
+        return "Scissors";
     }
 }
 
@@ -68,14 +68,14 @@ function checkWinner(playerChoice, cpuChoice) {
     if (playerChoice === cpuChoice) {
     return"draw"
     }
-    else if ((playerChoice === "rock" && cpuChoice === "scissors") ||
-(playerChoice === "paper" && cpuChoice === "rock") || 
-(playerChoice === "scissors" && cpuChoice === "paper" )) {
+    else if ((playerChoice === "Rock" && cpuChoice === "Scissors") ||
+(playerChoice === "Paper" && cpuChoice === "Rock") || 
+(playerChoice === "Scissors" && cpuChoice === "Paper" )) {
     return "player"
     }
-    else if (((playerChoice === "paper" && cpuChoice === "scissors") ||
-(playerChoice === "scissors" && cpuChoice === "rock") || 
-(playerChoice === "rock" && cpuChoice === "paper" ))) {
+    else if (((playerChoice === "Paper" && cpuChoice === "Scissors") ||
+(playerChoice === "Scissors" && cpuChoice === "Rock") || 
+(playerChoice === "Rock" && cpuChoice === "Paper" ))) {
     return "cpu"
     }
     else {
@@ -170,7 +170,7 @@ function endGame(playerScore, cpuScore) {
     }
 
     else { 
-        result = `You lose! ${playerScore} to ${cpuScore}.\nbad luck, try again?` 
+        result = `You lose! ${playerScore} to ${cpuScore}.\nBad luck, try again?` 
         resultMessage(result)
     }
 }
