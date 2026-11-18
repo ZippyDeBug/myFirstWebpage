@@ -3,22 +3,15 @@ let totalRounds = 0;
 let playerScore = 0;
 let cpuScore = 0; 
 
-//create const for player score divs for messages
-const result = document.querySelector(".results")
-
-//create function for adding win or lose message
-function resultMessage(userChoice, cpuChoice, resultState) {
-    const messageDiv = document.createElement("div");
-    messageDiv.textContent = `${userChoice} vs ${cpuChoice} = you ${resultState}`;
-    result.appendChild(messageDiv);
-}
-
-
 // Create const for finding buttons rock, paper, scissors & play again.
 const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
 const scissorsButton = document.querySelector("#scissors");
 const playAgainButton = document.querySelector("#playAgain");
+
+//create const for player score divs for messages
+const result = document.querySelector(".results")
+
 
 // add event listener for rock, when clicked playGame(rock)
 // add event listener for paper, when clicked playGame(paper)
@@ -129,6 +122,14 @@ function showScore(player,cpu) {
     displayPlayerScore.textContent = `${playerScore}`;
     displayTotalRounds.textContent = `${totalRounds}`;
     
+}
+
+
+//create function for adding win or lose message
+function resultMessage(userChoice, cpuChoice, resultState) {
+    const messageDiv = document.createElement("div");
+    messageDiv.textContent = `${userChoice} vs ${cpuChoice} = you ${resultState}`;
+    result.appendChild(messageDiv);
 }
 
 
