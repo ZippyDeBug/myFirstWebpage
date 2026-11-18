@@ -123,9 +123,14 @@ function playGame(playerSelection) {
 // Reset cpuScore to 0
 // console state game reset , player scores and round total.
 function playAgain(i) {
+    rockButton.disabled = false;
+    scissorsButton.disabled = false;
+    paperButton.disabled = false;
     totalRounds = i;
     playerScore = i;
     cpuScore = i;
+    result = ""
+    resultMessage(result)
     showScore("playerScore","cpuScore")
 }
 
