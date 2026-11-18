@@ -2,6 +2,7 @@
 let totalRounds = 0;
 let playerScore = 0;
 let cpuScore = 0; 
+const roundLimit = 5
 
 // Create const for finding buttons rock, paper, scissors & play again.
 const rockButton = document.querySelector("#rock");
@@ -94,7 +95,6 @@ function checkWinner(playerChoice, cpuChoice) {
 // rune results message function
 
 function playGame(playerSelection) {
-    totalRounds++;
     playerChoice = playerSelection;
     cpuChoice = getCpuChoice();
     winner = checkWinner(playerChoice, cpuChoice);
@@ -113,6 +113,7 @@ function playGame(playerSelection) {
     }
     showScore(playerScore,cpuScore);
     resultMessage(result)
+    checkRounds()
 }
 
 
@@ -140,12 +141,29 @@ function showScore() {
     
 }
 
-
 //create function for adding win or lose message
 function resultMessage(result) {
     const messageDiv = document.createElement("div");
     resultPlace.textContent = result
 }
 
+function checkRounds() {
+    if(totalRounds >= 5) {
+        endGame(playerScore, cpuScore)
+    } 
+    else {totalRounds++}
+}
+
+function endGame(playerScore, cpuScore) {
+    if (playerScore > cpuScore) {    
+        result = ` You win! ${playerScore} to ${cpuScore}. Great job!` 
+        resultMessage(result)
+    }
+
+    else { 
+        result = ` You lose! ${playerScore} to ${cpuScore}. bad luck, try again?` 
+        resultMessage(result)
+    }
+}
 
 
