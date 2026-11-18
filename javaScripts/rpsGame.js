@@ -10,7 +10,7 @@ const scissorsButton = document.querySelector("#scissors");
 const playAgainButton = document.querySelector("#playAgain");
 
 //create const for player score divs for messages
-const result = document.querySelector(".results")
+const resultPlace = document.querySelector(".results")
 
 
 // add event listener for rock, when clicked playGame(rock)
@@ -54,37 +54,29 @@ function getCpuDecision() {
 function playGame(playerChoice) {
     totalRounds++;
     const cpuDecision = getCpuDecision();
+    let result = ""
     if (playerChoice === cpuDecision) {
-    console.log (playerChoice)
-    console.log (cpuDecision);
-    console.log ("A Draw!");
-    console.log ((playerScore), (cpuScore))
-    console.log ("Total Rounds:",(totalRounds))       
+    result = `${playerChoice} matches ${cpuDecision}. 
+    A draw!`     
     }
     else if ((playerChoice === "rock" && cpuDecision === "scissors") ||
 (playerChoice === "paper" && cpuDecision === "rock") || 
 (playerChoice === "scissors" && cpuDecision === "paper" )) {
     playerScore++; 
-    console.log (playerChoice)
-    console.log (cpuDecision);
-    console.log ("You win!")
-    console.log ((playerScore), (cpuScore))    
-    console.log ("Total Rounds:", (totalRounds))
+    result = `${playerChoice} beats ${cpuDecision}.
+    You Win!`
     }
     else if (((playerChoice === "paper" && cpuDecision === "scissors") ||
 (playerChoice === "scissors" && cpuDecision === "rock") || 
 (playerChoice === "rock" && cpuDecision === "paper" ))) {
     cpuScore++; 
-    console.log (playerChoice)
-    console.log (cpuDecision);
-    console.log ("CPU wins!");
-    console.log ((playerScore), (cpuScore));
-    console.log ("Total Rounds:", (totalRounds)) ;
+    result = `${playerChoice} is beaten by ${cpuDecision}. CPU Wins!`
     }
     else {
         Alert ("Error")
     }
-    showScore("playerScore","cpuScore")
+    showScore("playerScore","cpuScore");
+    resultMessage(result)
 }
 
 
@@ -126,10 +118,10 @@ function showScore(player,cpu) {
 
 
 //create function for adding win or lose message
-function resultMessage(userChoice, cpuChoice, resultState) {
+function resultMessage(result) {
     const messageDiv = document.createElement("div");
-    messageDiv.textContent = `${userChoice} vs ${cpuChoice} = you ${resultState}`;
-    result.appendChild(messageDiv);
+    messageDiv.textContent = result;
+    resultPlace.appendChild(messageDiv);
 }
 
 
