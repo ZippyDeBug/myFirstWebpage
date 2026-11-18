@@ -12,7 +12,14 @@ const playAgainButton = document.querySelector("#playAgain");
 //create const for player score divs for messages
 const resultPlace = document.querySelector(".results")
 
+//create const for finding the scorePoints "span" within cpuScore div
+const displayCpuScore = document.querySelector("#cpuScore");
+//create const for finding the scorePoints "span" within playerScore div
+const displayPlayerScore = document.querySelector("#playerScore");
+//create const for finding the totalRounds Div.
+const displayTotalRounds = document.querySelector("#totalRounds");
 
+//create variable for choices, winners and result message.
 let playerChoice = ""
 let cpuChoice = ""
 let winner = ""
@@ -30,7 +37,6 @@ playAgainButton.addEventListener("click", function () {playAgain(0)})
 
 
 // create general helper function for randomIntGen
-
 function getRandomIntGen(max) {
     return Math.floor(Math.random()*max);
     }
@@ -56,7 +62,7 @@ function getCpuChoice() {
 // if matching , return draw
 // if player wins, return player
 // if cpu wins return cpu
-
+// if none of these,  alert error
 function checkWinner(playerChoice, cpuChoice) {
     if (playerChoice === cpuChoice) {
     return"draw"
@@ -120,19 +126,7 @@ function playAgain(i) {
     playerScore = i;
     cpuScore = i;
     showScore("playerScore","cpuScore")
-    console.log( "Game reset!")
-    console.log ((playerScore), (cpuScore));
-    console.log ("Total Rounds:", (totalRounds)) ;
 }
-
-
-
-//create const for finding the scorePoints "span" within cpuScore div
-const displayCpuScore = document.querySelector("#cpuScore");
-//create const for finding the scorePoints "span" within playerScore div
-const displayPlayerScore = document.querySelector("#playerScore");
-//create const for finding the totalRounds Div.
-const displayTotalRounds = document.querySelector("#totalRounds");
 
 
 //create function for display Score
@@ -150,8 +144,7 @@ function showScore() {
 //create function for adding win or lose message
 function resultMessage(result) {
     const messageDiv = document.createElement("div");
-    messageDiv.textContent = result;
-    resultPlace.appendChild(messageDiv);
+    resultPlace.textContent = result
 }
 
 
