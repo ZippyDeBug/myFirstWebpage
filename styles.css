@@ -287,6 +287,10 @@ a {
     padding: 10px;
 }
 
+.rounds {
+    margin: 20px;
+}
+
 .results {
     margin: 20px;
     font-size: 20px;
@@ -295,9 +299,9 @@ a {
 }
 
 #playAgain {
-    width: 200px;
+    width: 150px;
+    height: 50px;
     justify-self: center;
-    margin: 20px;
 }
 
 /* TMNT Specific */

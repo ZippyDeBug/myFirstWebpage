@@ -20,6 +20,9 @@ const displayPlayerScore = document.querySelector("#playerScore");
 //create const for finding the totalRounds Div.
 const displayTotalRounds = document.querySelector("#totalRounds");
 
+const cpuScoreBoard = document.querySelector(".cpu.points")
+const playerScoreBoard = document.querySelector(".player.points")
+
 //create variable for choices, winners and result message.
 let playerChoice = ""
 let cpuChoice = ""
@@ -125,10 +128,15 @@ function playAgain(i) {
     rockButton.disabled = false;
     scissorsButton.disabled = false;
     paperButton.disabled = false;
+    rockButton.style.backgroundColor = "";
+    scissorsButton.style.backgroundColor = "";
+    paperButton.style.backgroundColor = "";
+    playerScoreBoard.style.backgroundColor = ""
+    cpuScoreBoard.style.backgroundColor = ""
     totalRounds = i;
     playerScore = i;
     cpuScore = i;
-    result = ""
+    result = "\nReady?"
     resultMessage(result)
     showScore("playerScore","cpuScore")
 }
@@ -164,14 +172,26 @@ function endGame(playerScore, cpuScore) {
     rockButton.disabled = true;
     scissorsButton.disabled = true;
     paperButton.disabled = true;
+    rockButton.style.backgroundColor = "grey";
+    scissorsButton.style.backgroundColor = "grey";
+    paperButton.style.backgroundColor = "grey";
     if (playerScore > cpuScore) {    
         result = ` You win! ${playerScore} to ${cpuScore}.\nGreat job!` 
         resultMessage(result)
+        playerScoreBoard.style.backgroundColor = "#df5429"
+        cpuScoreBoard.style.backgroundColor = "grey"
+        
+
+
+        
     }
 
     else { 
         result = `You lose! ${playerScore} to ${cpuScore}.\nBad luck, try again?` 
         resultMessage(result)
+        cpuScoreBoard.style.backgroundColor = "#df5429"
+        playerScoreBoard.style.backgroundColor = "grey"
+    
     }
 }
 
