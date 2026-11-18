@@ -99,17 +99,15 @@ function playGame(playerSelection) {
     cpuChoice = getCpuChoice();
     winner = checkWinner(playerChoice, cpuChoice);
     if (winner === "draw") {
-    result = `${playerChoice} matches ${cpuChoice}. 
-    A draw!`     
+    result = `${playerChoice} matches ${cpuChoice}.\nA draw!`     
     }
     else if (winner === "player") {
     playerScore++; 
-    result = `${playerChoice} beats ${cpuChoice}.
-    You Win!`
+    result = `${playerChoice} beats ${cpuChoice}.\nYou Win!`
     }
     else if (winner === "cpu") {
     cpuScore++; 
-    result = `${playerChoice} is beaten by ${cpuChoice}. CPU Wins!`
+    result = `${playerChoice} is beaten by ${cpuChoice}.\nCPU Wins!`
     }
     showScore(playerScore,cpuScore);
     resultMessage(result)
@@ -149,7 +147,6 @@ function showScore() {
 
 //create function for adding win or lose message
 function resultMessage(result) {
-    const messageDiv = document.createElement("div");
     resultPlace.textContent = result
 }
 
@@ -168,12 +165,12 @@ function endGame(playerScore, cpuScore) {
     scissorsButton.disabled = true;
     paperButton.disabled = true;
     if (playerScore > cpuScore) {    
-        result = ` You win! ${playerScore} to ${cpuScore}. Great job!` 
+        result = ` You win! ${playerScore} to ${cpuScore}.\nGreat job!` 
         resultMessage(result)
     }
 
     else { 
-        result = ` You lose! ${playerScore} to ${cpuScore}. bad luck, try again?` 
+        result = `You lose! ${playerScore} to ${cpuScore}.\nbad luck, try again?` 
         resultMessage(result)
     }
 }
