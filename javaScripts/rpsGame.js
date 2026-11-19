@@ -180,10 +180,7 @@ function endGame(playerScore, cpuScore) {
         resultMessage(result)
         playerScoreBoard.style.backgroundColor = "#df5429"
         cpuScoreBoard.style.backgroundColor = "grey"
-        
-
-
-        
+                
     }
 
     else { 
